@@ -11,6 +11,9 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
+    if: ${{ !github.event.release.prerelease }}
+    
     steps:
       - uses: actions/checkout@v6
         with:
